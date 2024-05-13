@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Wikiposts</h1>
+
+<div id="wikiposts">
+  <% @wikiposts.each do |wikipost| %>
+    <%= render wikipost %>
+    <p>
+      <%= link_to "Show this wikipost", wikipost %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New wikipost", new_wikipost_path %>
