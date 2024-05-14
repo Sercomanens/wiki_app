@@ -70,6 +70,6 @@ class WikipostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wikipost_params
-      params.fetch(:wikipost, {}).permit(:title)
+      params.fetch(:wikipost, {}).permit(:title, :description, :author)
     end
 end

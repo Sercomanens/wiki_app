@@ -1,7 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @wikipost %>
-<h1><%= @wikipost.title%></h1>
+
+<h1><%= @wikipost.title.titleize%></h1>
+<p><%= @wikipost.description %></p>
+<p>Author: <%= @wikipost.author.titleize %></p>
 <p>Created on <%= @wikipost.created_at.strftime('%B %d, %Y') %></p>
 
 <div>

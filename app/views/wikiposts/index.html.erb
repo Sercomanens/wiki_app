@@ -4,22 +4,24 @@
 
 <div id="wikiposts">
   <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @wikiposts.each do |wikipost| %>
-   <tr>
-    <td><%= link_to wikipost.title, wikipost_path(wikipost) %></td>
-    <td><%= wikipost.created_at.strftime('%B %d, %Y') %></td>
-    <td><%= wikipost.updated_at.strftime('%B %d, %Y') %></td>
-   </tr>
-  <% end %>
-  </tbody>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @wikiposts.each do |wikipost| %>
+        <tr>
+          <td><%= link_to wikipost.title, wikipost_path(wikipost) %></td>
+          <td><%= wikipost.created_at.strftime('%B %d, %Y') %></td>
+          <td><%= wikipost.updated_at.strftime('%B %d, %Y') %></td>
+          <td><%= wikipost.author.titleize %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
 
