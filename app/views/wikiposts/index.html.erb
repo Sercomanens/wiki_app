@@ -1,14 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Wikiposts</h1>
+<h1>Wiki posts</h1>
 
 <div id="wikiposts">
+  <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @wikiposts.each do |wikipost| %>
-    <%= render wikipost %>
-    <p>
-      <%= link_to "Show this wikipost", wikipost %>
-    </p>
+   <tr>
+    <td><%= link_to wikipost.title, wikipost_path(wikipost) %></td>
+    <td><%= wikipost.created_at.strftime('%B %d, %Y') %></td>
+    <td><%= wikipost.updated_at.strftime('%B %d, %Y') %></td>
+   </tr>
   <% end %>
+  </tbody>
+  </table>
 </div>
 
 <%= link_to "New wikipost", new_wikipost_path %>
